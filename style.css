@@ -1,0 +1,405 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Transparent background */
+    color: white;
+    z-index: 1000; /* Ensure it stays on top */
+    transition: background 0.3s ease;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+}
+
+.logo {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1em;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: #f0f0f0;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    background: white;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 60px; /* Position the menu below the navbar */
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+}
+
+.cover1 {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height on larger screens */
+    overflow: hidden;
+}
+
+.cover1 img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Make the image cover the container */
+    object-fit: cover; /* Ensure images cover the container without distortion */
+    border-radius: 10px; /* Maintain border radius */
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.cover1 img.active {
+    opacity: 1;
+}
+
+.cover1 img.inactive {
+    opacity: 0;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 1080px) {
+    .cover1 {
+        height: 300px; /* Adjust height for mobile version */
+    }
+
+    .cover1 img {
+        top: 60px; /* Move images down by 40px on smaller screens */
+        height: auto; /* Maintain aspect ratio for mobile */
+        border-radius: 0; /* Remove border radius to avoid clipping */
+    }
+}
+
+/* Anime Covers Section */
+.anime-covers {
+    padding: 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.anime-cover-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+    gap: 10px; /* Space between images */
+    align-items: center; /* Center images vertically */
+}
+
+.anime-cover-container a {
+    display: block; /* Ensure the anchor tag wraps the image properly */
+    width: calc(20% - 10px); /* Full width for 5 items with space adjustment */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.anime-cover-container img {
+    width: 100%; /* Make the image fill its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+    object-fit: cover; /* Cover the image without distortion */
+    max-height: 500px; /* Limit height to keep consistency */
+}
+
+/* Responsive adjustments for anime covers */
+@media (max-width: 1024px) {
+    .anime-cover-container a {
+        width: calc(25% - 10px); /* Adjust for slightly smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .anime-cover-container a {
+        width: calc(33.33% - 10px); /* Adjust for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .anime-cover-container a {
+        width: calc(50% - 10px); /* Adjust for very small screens */
+    }
+}
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.cover2 {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Hide overflow to ensure images do not exceed container boundaries */
+}
+
+.cover2 img {
+    width: 100%; /* Make the image take full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any default inline spacing */
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cover2 {
+        /* Additional styles for small screens if needed */
+    }
+}
+
+/* Adjustments for very small screens */
+@media (max-width: 480px) {
+    .cover2 img {
+        /* Further adjustments if necessary */
+    }
+}
+.profile-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive styles for profile icon */
+@media (max-width: 768px) {
+    .profile-icon {
+        position: absolute;
+        right: 80px;
+    }
+}
+/* Navbar styles as before... */
+
+.profile-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.profile-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Dropdown menu hidden by default */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Show the dropdown menu when the class 'show-dropdown' is added */
+.show-dropdown {
+    display: block;
+}
+
+.dropdown a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown a:hover {
+    background-color: #575757;
+}
+
+
+.profile-icon:hover .dropdown {
+    display: block;
+}
+
+/* Responsive styles as before... */
+
+.anime-slider-section {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center; /* Center the title and slider */
+}
+
+.slider-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space between title and slider */
+    color: #fff; /* Adjust color as needed */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Optional: add shadow for better readability */
+}
+
+/* Existing CSS for slider */
+.anime-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    flex: 0 0 auto; /* Ensure slides don't shrink */
+    width: 220px; /* Increased width for slides */
+    height: 330px; /* Increased height for slides */
+    margin-right: 15px; /* Increased space between slides */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the slide area */
+    display: block;
+}
+
+/* Navigation arrows */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.5);
+    transform: translateY(-50%);
+}
+
+.next {
+    right: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 1024px) {
+    .slide {
+        width: 180px; /* Adjusted for smaller desktop screens */
+        height: 270px; /* Adjust proportionally */
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .slide {
+        width: 150px; /* Further adjustment for tablets */
+        height: 225px; /* Adjust proportionally */
+    }
+
+    .prev, .next {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .slide {
+        width: 130px; /* Further adjustment for mobile screens */
+        height: 195px; /* Adjust proportionally */
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 6px;
+    }
+}
